@@ -17,6 +17,9 @@ import { cn } from "@/lib/utils";
 import { Check, Currency, Zap } from "lucide-react";
 import { Button } from "./button";
 import { useRouter } from "next/navigation";
+
+// Declare Razorpay on the window object
+
 import { useState } from "react";
 
 export const ProModel = () => {
@@ -28,7 +31,7 @@ export const ProModel = () => {
     const data = await fetch("http://localhost:3000/api/razorpay");
 
     const { order } = await data.json();
-
+    console.log(order);
     const options = {
       key_id: key,
       name: "GENIUS",
@@ -61,6 +64,7 @@ export const ProModel = () => {
         contact: "8429688187",
       },
     };
+    console.log(options);
     const paymentObject = new window.Razorpay(options);
     paymentObject.open();
     paymentObject.on("payment.failed", () => {

@@ -38,6 +38,8 @@ export async function GET() {
       const order = await instance.orders.create(options);
 
       return NextResponse.json({ msg: "success", order });
+    } else {
+      return new NextResponse("Already Subscribed", { status: 400 });
     }
   } catch (error) {
     console.log("{RAZOR ERROR}", error);
