@@ -43,7 +43,7 @@ export async function POST(req: Request, res: Response) {
         endDate: fd,
       } as any,
     });
-    return new NextResponse(null, { status: 200 });
+    return NextResponse.json({ message: "success" }, { status: 200 });
   } else {
     return NextResponse.json(
       {
