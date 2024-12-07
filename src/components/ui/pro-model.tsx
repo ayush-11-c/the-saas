@@ -55,7 +55,7 @@ export const ProModel = () => {
         });
         const res = await data.json();
         if (res?.message === "success") {
-          router.push("/settings" + response.razorpay_payment_id);
+          router.push("/settings");
         }
       },
       prefill: {
