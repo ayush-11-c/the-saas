@@ -42,7 +42,7 @@ export default function ConversationPage() {
         "/api/conversation",
         newMessage[0]
 
-        //yahabhejna hai
+        //sending prompt to api
       );
 
       setMessages([...messages, userMessage, { res: response.data }]);

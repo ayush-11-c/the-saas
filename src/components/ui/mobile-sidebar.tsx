@@ -16,9 +16,9 @@ export default function MobileSidebar({ apiLimit, isPro = false }: mobileProp) {
   return (
     <Sheet>
       <SheetTrigger>
-        <Button variant="ghost" size="icon" className="bg-amber-400 md:hidden ">
-          <Menu />
-        </Button>
+        {/* <Button variant="ghost" size="icon" className="bg-amber-400 md:hidden "> */}
+        <Menu />
+        {/* </Button> */}
       </SheetTrigger>
       <SheetContent side="left" className="p-0">
         <Sidebar apiLimit={apiLimit} isPro={isPro} />

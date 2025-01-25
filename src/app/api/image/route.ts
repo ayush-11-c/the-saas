@@ -36,6 +36,7 @@ export async function POST(req: Request) {
     console.log("cahturvedi");
     const freeTrial = checkApiLimit();
     const isPro = checkSubscription();
+    if (!isPro) await increaseApiLimit();
     if (!freeTrial && !isPro)
       return new NextResponse("Free trial expired", { status: 403 });
     try {
@@ -43,7 +44,6 @@ export async function POST(req: Request) {
     } catch (error) {
       console.error(error);
     }
-    if (!isPro) increaseApiLimit();
   } catch (error) {
     console.log("CONVERSATION PAGE AAPI ", error);
     return new NextResponse("INTERNAL CONVO ERROR", { status: 500 });
