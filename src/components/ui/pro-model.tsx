@@ -65,7 +65,7 @@ export const ProModel = () => {
       },
     };
     console.log(options);
-    const paymentObject = new window.Razorpay(options);
+    const paymentObject = new (window as any).Razorpay(options);
     paymentObject.open();
     paymentObject.on("payment.failed", () => {
       alert("Payment failed. Please try again. Contact support for help");
